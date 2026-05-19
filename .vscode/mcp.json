@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "vnbdigital": {
+      "command": "uv",
+      "args": ["--directory", "${workspaceFolder}", "run", "vnbdigital-mcp"],
+      "env": {
+        "PATH": "${userHome}/.local/bin:${env:PATH}"
+      }
+    }
+  }
+}
