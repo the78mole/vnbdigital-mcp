@@ -63,26 +63,59 @@ uv run mcp dev src/vnbdigital_mcp/server.py
 
 Add the server to your MCP configuration (`.vscode/mcp.json` or `claude_desktop_config.json`):
 
+**Install from PyPI (recommended):**
+
 ```json
 {
   "servers": {
     "vnbdigital": {
-      "command": "uv",
+      "command": "bash",
       "args": [
-        "--directory", "/path/to/vnbdigital-mcp",
-        "run", "vnbdigital-mcp"
-      ],
-      "env": {
-        "PATH": "${userHome}/.local/bin:${env:PATH}"
-      }
+        "-l",
+        "-c",
+        "uvx vnbdigital-mcp"
+      ]
     }
   }
 }
 ```
 
-> **Note:** VS Code does not always inherit `~/.local/bin` in its PATH.
-> The `env.PATH` entry above ensures `uv` is found.
-> For VS Code workspaces you can use `"${workspaceFolder}"` instead of the absolute path.
+**Install from GitHub (latest unreleased):**
+
+```json
+{
+  "servers": {
+    "vnbdigital": {
+      "command": "bash",
+      "args": [
+        "-l",
+        "-c",
+        "uvx --from git+https://github.com/the78mole/vnbdigital-mcp.git vnbdigital-mcp"
+      ]
+    }
+  }
+}
+```
+
+**Local development (workspace checkout):**
+
+```json
+{
+  "servers": {
+    "vnbdigital": {
+      "command": "bash",
+      "args": [
+        "-l",
+        "-c",
+        "uv --directory ${workspaceFolder} run vnbdigital-mcp"
+      ]
+    }
+  }
+}
+```
+
+> **Note:** `bash -l` loads the login shell profile, which ensures `uvx`/`uv`
+> are found in `~/.local/bin` without any additional `env` configuration.
 
 ## Environment Variables
 
