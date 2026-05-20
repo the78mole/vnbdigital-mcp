@@ -1,10 +1,18 @@
 # vnbdigital-mcp
 
+[![PyPI](https://img.shields.io/pypi/v/vnbdigital-mcp)](https://pypi.org/project/vnbdigital-mcp/) [![Python](https://img.shields.io/pypi/pyversions/vnbdigital-mcp)](https://pypi.org/project/vnbdigital-mcp/) [![Publish](https://github.com/the78mole/vnbdigital-mcp/actions/workflows/publish.yml/badge.svg)](https://github.com/the78mole/vnbdigital-mcp/actions/workflows/publish.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv) [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 MCP server for accessing the [vnbdigital.de](https://www.vnbdigital.de) database
 of German distribution grid operators (Verteilnetzbetreiber, VNB).
 
-Built on top of the verified [vnbdigital-client](https://github.com/the78mole/vnbdigital-client)
-library and exposes the data via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io).
+Built on top of the [vnbdigital-client](https://github.com/the78mole/vnbdigital-client) library,
+which also ships a **standalone CLI** and can be used directly as a **Python library** in your own code.
+This repository adds an MCP interface on top, making the data available to AI assistants and
+agents via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io).
+
+> **Looking for the Python library or CLI?**
+> Head over to [vnbdigital-client](https://github.com/the78mole/vnbdigital-client).
 
 ## Tools
 
@@ -142,7 +150,7 @@ Known example IDs:
 or a `"lat,lon"` coordinate string:
 
 ```python
-get_nsp_operator("97816")            # by postcode
+get_nsp_operator("97816")              # by postcode
 get_nsp_operator("49.998037,9.58033")  # by coordinates
 ```
 
@@ -167,6 +175,14 @@ uv run ruff check --fix .
 # Tests
 uv run pytest
 ```
+
+## Related Projects
+
+| Project | Description |
+|---------|-------------|
+| [vnbdigital-client](https://github.com/the78mole/vnbdigital-client) | Python client library this MCP server is built on. Provides typed access to the vnbdigital.de GraphQL API and the BDEW register. |
+| [vnbdigital.de](https://www.vnbdigital.de) | Official database of German distribution grid operators. |
+| [bdew-codes.de](https://bdew-codes.de) | BDEW market participant register with company and market function codes. |
 
 ## License
 
