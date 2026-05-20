@@ -6,6 +6,47 @@ on:
   pull_request:
 
 jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        include:
+          # pydantic does not yet fully support 3.14 (still in RC)
+          - python-version: "3.14"
+            continue-on-error: true
+    continue-on-error: ${{ matrix.continue-on-error == true }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Remove local dev source overrides
+        run: |
+          python3 - <<'EOF'
+          import re, pathlib
+          path = pathlib.Path("pyproject.toml")
+          content = path.read_text()
+          content = re.sub(
+              r"\n# Override[^\n]*\n\[tool\.uv\.sources\][^\[]*",
+              "\n",
+              content,
+              flags=re.DOTALL,
+          )
+          path.write_text(content)
+          EOF
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v8.1.0
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --extra dev --python ${{ matrix.python-version }}
+
+      - name: Run tests
+        run: uv run pytest || [ $? -eq 5 ]
   build:
     name: Build package
     runs-on: ubuntu-latest
@@ -64,7 +105,7 @@ jobs:
 
   publish:
     name: Tag, release & publish to PyPI
-    needs: build
+    needs: [build, test]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     environment:

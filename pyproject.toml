@@ -7,7 +7,15 @@ authors = [
 ]
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.12"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
 dependencies = [
     "mcp[cli]>=1.0",
     "vnbdigital-client>=0.1.0",
@@ -18,6 +26,7 @@ dev = [
     "ruff>=0.15",
     "pytest>=8.0",
     "pytest-cov>=6.0",
+    "anyio[trio]>=4.0",
 ]
 
 [project.scripts]
