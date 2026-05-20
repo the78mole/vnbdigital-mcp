@@ -1,7 +1,7 @@
 # vnbdigital-mcp
 
 [![PyPI](https://img.shields.io/pypi/v/vnbdigital-mcp)](https://pypi.org/project/vnbdigital-mcp/) [![Python](https://img.shields.io/pypi/pyversions/vnbdigital-mcp)](https://pypi.org/project/vnbdigital-mcp/) [![Publish](https://github.com/the78mole/vnbdigital-mcp/actions/workflows/publish.yml/badge.svg)](https://github.com/the78mole/vnbdigital-mcp/actions/workflows/publish.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv) [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![GitHub issues](https://img.shields.io/github/issues/the78mole/vnbdigital-mcp)](https://github.com/the78mole/vnbdigital-mcp/issues) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv) [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 MCP server for accessing the [vnbdigital.de](https://www.vnbdigital.de) database
 of German distribution grid operators (Verteilnetzbetreiber, VNB).
