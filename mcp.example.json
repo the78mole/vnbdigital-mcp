@@ -5,8 +5,8 @@
       "args": [
         "-l",
         "-c",
-        "uv run vnbdigital-mcp"
-      ],
+        "uvx --from git+https://github.com/the78mole/vnbdigital-mcp.git vnbdigital-mcp"
+      ]
     }
   }
 }
