@@ -1,0 +1,118 @@
+title: "🆘 Help & Support"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        🤝 **Need help with vnbdigital-mcp?**
+
+        This template helps you provide the information needed for the community
+        to assist you effectively.
+
+        **Community Guidelines:**
+        - Be patient — volunteers help in their free time
+        - Provide clear information to get better help
+        - Search existing discussions first
+        - Consider contributing back once your issue is resolved
+
+  - type: textarea
+    id: help_needed
+    attributes:
+      label: "🎯 What Do You Need Help With?"
+      description: "Clear description of what you're trying to achieve or the problem you're facing"
+      placeholder: "Describe your issue or what you're trying to accomplish"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: help_category
+    attributes:
+      label: "📋 Help Category"
+      description: "Select the primary area where you need assistance"
+      options:
+        - label: "⚙️ Installation / setup"
+        - label: "🔌 MCP tool not working"
+        - label: "🌐 vnbdigital.de API response issues"
+        - label: "📋 BDEW lookup issues"
+        - label: "🛠️ Configuration (VS Code / Claude Desktop)"
+        - label: "🐍 Python / uv environment"
+        - label: "🧪 MCP Inspector / testing"
+
+  - type: input
+    id: mcp_version
+    attributes:
+      label: "📦 vnbdigital-mcp version"
+      placeholder: "e.g., 0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: client_version
+    attributes:
+      label: "📦 vnbdigital-client version"
+      description: "Run: uv pip show vnbdigital-client"
+      placeholder: "e.g., 0.4.3"
+
+  - type: input
+    id: python_version
+    attributes:
+      label: "🐍 Python version"
+      placeholder: "e.g., 3.12.3"
+
+  - type: input
+    id: mcp_client
+    attributes:
+      label: "🖥️ MCP client"
+      placeholder: "e.g., VS Code Copilot, Claude Desktop, MCP Inspector"
+
+  - type: textarea
+    id: current_situation
+    attributes:
+      label: "🔍 Current Situation"
+      description: "Describe your current setup and what's working / not working"
+      placeholder: "Explain what you have set up so far and where you're encountering problems"
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific_problem
+    attributes:
+      label: "❗ Specific Problem"
+      description: "What exactly isn't working?"
+      placeholder: "Be as specific as possible about the issue you're experiencing"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: steps_tried
+    attributes:
+      label: "🔄 Steps Already Tried"
+      description: "What have you already attempted?"
+      options:
+        - label: "Checked the README / documentation"
+        - label: "Ran uv sync"
+        - label: "Tested with MCP Inspector"
+        - label: "Reviewed error messages / logs"
+        - label: "Searched existing issues and discussions"
+        - label: "Tried a fresh virtual environment"
+
+  - type: textarea
+    id: error_messages
+    attributes:
+      label: "📊 Error Messages / Logs"
+      description: "Include any error messages, tracebacks, or diagnostic information"
+      placeholder: "Paste error messages or logs here"
+      render: text
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "🎯 Expected Behavior"
+      description: "What should happen instead?"
+      placeholder: "Describe what you expect when everything is working correctly"
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: "💡 Additional Context"
+      description: "Any other relevant information"
+      placeholder: "Include any other details that might help: OS, network setup, recent changes, etc."

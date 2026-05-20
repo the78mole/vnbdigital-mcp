@@ -1,0 +1,82 @@
+title: "💬 General Discussion"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for starting a discussion about **vnbdigital-mcp**!
+        This template helps structure general conversations about the project.
+
+  - type: input
+    id: topic
+    attributes:
+      label: "🎯 Discussion Topic"
+      description: "What would you like to discuss?"
+      placeholder: "Brief summary of your discussion topic"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: category
+    attributes:
+      label: "📋 Category"
+      description: "Check the most relevant category"
+      options:
+        - label: "🔌 MCP tools / behaviour"
+        - label: "🌐 vnbdigital.de API"
+        - label: "📋 BDEW register integration"
+        - label: "⚙️ Configuration / deployment"
+        - label: "📚 Documentation"
+        - label: "🤝 Community / project direction"
+        - label: "💡 Ideas / brainstorming"
+
+  - type: textarea
+    id: background
+    attributes:
+      label: "🔍 Background / Context"
+      description: "Provide context for your discussion"
+      placeholder: "Share relevant background information"
+    validations:
+      required: true
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: "❓ Questions / Points for Discussion"
+      description: "What specific questions or points would you like to discuss?"
+      placeholder: |
+        1. Your first question or point
+        2. Your second question or point
+    validations:
+      required: true
+
+  - type: textarea
+    id: thoughts
+    attributes:
+      label: "💭 Your Thoughts / Opinions"
+      description: "Share your perspective on the topic"
+      placeholder: "What are your initial thoughts or opinions?"
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "📚 References / Links"
+      description: "Any relevant links or documentation"
+      placeholder: "Include links to relevant docs, specs, or resources"
+
+  - type: checkboxes
+    id: looking_for
+    attributes:
+      label: "🤝 Looking For"
+      description: "What kind of engagement are you seeking?"
+      options:
+        - label: "Community feedback"
+        - label: "Technical advice"
+        - label: "Collaboration partners"
+        - label: "General discussion"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📋 Additional Information"
+      description: "Any other relevant information"
+      placeholder: "Include any other details that might be helpful"

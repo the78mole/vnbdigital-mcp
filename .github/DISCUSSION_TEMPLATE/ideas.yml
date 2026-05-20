@@ -1,0 +1,123 @@
+title: "💡 Ideas & Suggestions"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        💡 **Got an idea for vnbdigital-mcp?**
+
+        Share your ideas, suggestions, and creative thoughts with the community!
+        Your input helps shape the future of the project.
+
+  - type: input
+    id: idea_title
+    attributes:
+      label: "🎯 Idea Title"
+      description: "Brief summary of your idea"
+      placeholder: "Give your idea a catchy title"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: idea_category
+    attributes:
+      label: "📋 Category"
+      description: "What area does your idea relate to?"
+      options:
+        - label: "🔌 New MCP tool"
+        - label: "📊 Enhancement of an existing tool"
+        - label: "🌐 New data source / API"
+        - label: "⚙️ Configuration / deployment"
+        - label: "📚 Documentation improvement"
+        - label: "🧪 Testing / CI"
+        - label: "🤝 Community / project organisation"
+
+  - type: textarea
+    id: idea_description
+    attributes:
+      label: "💭 Idea Description"
+      description: "Detailed description of your idea"
+      placeholder: "Explain your idea in detail — what it is, how it would work, and why it would be beneficial"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_solved
+    attributes:
+      label: "🚀 Problem / Use Case"
+      description: "What problem does this solve? What's your use case?"
+      placeholder: "Describe the specific problem or need that your idea addresses"
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: "✨ Expected Benefits"
+      description: "What benefits would this bring to users?"
+      placeholder: "How would this improve the experience for vnbdigital-mcp users?"
+
+  - type: textarea
+    id: implementation_thoughts
+    attributes:
+      label: "🛠️ Implementation Thoughts"
+      description: "How do you envision this being implemented?"
+      placeholder: "Share any thoughts on technical implementation"
+
+  - type: dropdown
+    id: impact_scope
+    attributes:
+      label: "📊 Impact Scope"
+      description: "Who would benefit from this idea?"
+      options:
+        - "Would benefit most users"
+        - "Useful for specific use cases"
+        - "Advanced users primarily"
+        - "Everyone equally"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity_estimate
+    attributes:
+      label: "⚙️ Complexity Estimate"
+      description: "How complex do you think this would be to implement?"
+      options:
+        - "Simple change — could be done quickly"
+        - "Moderate effort required"
+        - "Major project — significant work needed"
+        - "Research needed first"
+        - "Not sure about complexity"
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "🔄 Alternative Approaches"
+      description: "Have you considered other ways to achieve the same goal?"
+      placeholder: "Are there alternative solutions that might work?"
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "📚 References / Examples"
+      description: "Links to similar implementations, API docs, or relevant specifications"
+      placeholder: "Include links to examples or related projects"
+
+  - type: checkboxes
+    id: contribution_offer
+    attributes:
+      label: "🤝 Contribution Offer"
+      description: "How would you like to be involved?"
+      options:
+        - label: "I would like to implement this myself"
+        - label: "I can provide testing / validation"
+        - label: "I can help with documentation"
+        - label: "I can provide design input"
+        - label: "I need someone else to implement this"
+        - label: "Just sharing the idea for others to consider"
+
+  - type: textarea
+    id: additional_thoughts
+    attributes:
+      label: "📋 Additional Thoughts"
+      description: "Any other relevant information or thoughts about your idea"
+      placeholder: "Include any other details, concerns, or related ideas"

@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Discussion
+    url: https://github.com/the78mole/vnbdigital-mcp/discussions/categories/general
+    about: General questions, ideas, and community discussion
+  - name: 🆘 Help & Support
+    url: https://github.com/the78mole/vnbdigital-mcp/discussions/categories/help-support
+    about: Get help from the community with setup and troubleshooting
+  - name: 💡 Ideas & Suggestions
+    url: https://github.com/the78mole/vnbdigital-mcp/discussions/categories/ideas
+    about: Share your ideas and suggestions for improving the project
+  - name: ❓ Q & A
+    url: https://github.com/the78mole/vnbdigital-mcp/discussions/categories/q-a
+    about: Ask questions and get answers from the community

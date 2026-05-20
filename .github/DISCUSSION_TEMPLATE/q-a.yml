@@ -1,0 +1,53 @@
+title: "❓ Q & A"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ❓ **Have a question about vnbdigital-mcp?**
+
+        Please search existing discussions before posting — your question may already be answered!
+
+  - type: textarea
+    id: question
+    attributes:
+      label: "🎯 Your Question"
+      description: "What would you like to know?"
+      placeholder: "State your question clearly and concisely"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: question_category
+    attributes:
+      label: "📋 Question Category"
+      options:
+        - label: "🔌 MCP tool usage"
+        - label: "🌐 vnbdigital.de data / API"
+        - label: "📋 BDEW codes / market functions"
+        - label: "⚙️ Configuration (VS Code / Claude Desktop)"
+        - label: "🐍 Python / uv setup"
+        - label: "🏗️ Architecture / internals"
+        - label: "📚 Documentation"
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "🔍 Context"
+      description: "Provide any background that helps understand your question"
+      placeholder: "What are you trying to achieve? What have you already tried?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: already_checked
+    attributes:
+      label: "📖 Already Checked"
+      description: "Where did you look for an answer before posting?"
+      placeholder: "e.g. README, existing discussions, vnbdigital.de docs, bdew-codes.de"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "💡 Additional Information"
+      description: "Any other details that might help answer your question"
+      placeholder: "Include versions, error messages, or other context"
