@@ -8,7 +8,7 @@ Model Context Protocol (MCP). Tools wrap the verified vnbdigital-client library.
 import os
 from typing import Any
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from vnbdigital_client import (
     Operator,
     VNBDigitalClient,
@@ -21,7 +21,7 @@ from vnbdigital_client import (
 # Server setup
 # ---------------------------------------------------------------------------
 
-mcp = FastMCP(
+mcp = MCPServer(
     "vnbdigital",
     instructions=(
         "This server provides information about German distribution grid operators (VNB) "

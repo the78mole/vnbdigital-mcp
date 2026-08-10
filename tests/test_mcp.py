@@ -1,7 +1,7 @@
 """MCP-protocol-level tests for the vnbdigital MCP server.
 
 These tests call ``mcp.list_tools()`` and ``mcp.call_tool()`` directly on the
-FastMCP instance, which exercises the full MCP dispatch path (argument
+MCPServer instance, which exercises the full MCP dispatch path (argument
 validation, tool lookup, serialisation) without needing a real HTTP transport.
 """
 
@@ -52,7 +52,7 @@ async def test_each_tool_has_description():
 async def test_get_operator_has_operator_id_parameter():
     tools = await mcp.list_tools()
     tool = next(t for t in tools if t.name == "get_operator")
-    params = tool.inputSchema.get("properties", {})
+    params = tool.input_schema.get("properties", {})
     assert "operator_id" in params
 
 
@@ -106,7 +106,7 @@ async def test_call_search_returns_list(mock_postcode_hit):
         result = await mcp.call_tool("search", {"search_term": "63739"})
 
     data = _parse_result(result)
-    # FastMCP wraps list return values in {"result": [...]}
+    # Non-dict return types are wrapped in {"result": [...]}
     hits = data["result"] if isinstance(data, dict) and "result" in data else data
     assert isinstance(hits, list)
     assert hits[0]["type"] == "POSTCODE"
@@ -157,9 +157,5 @@ async def test_call_bdew_lookup_by_company_code(mock_operator):
 
 
 def _parse_result(result):
-    """Extract the raw Python value returned by mcp.call_tool().
-
-    FastMCP returns a tuple ``(list[ContentBlock], raw_value)``.
-    Index 1 is the un-serialised Python dict/list.
-    """
-    return result[1]
+    """Extract the raw Python value returned by mcp.call_tool()."""
+    return result.structured_content
