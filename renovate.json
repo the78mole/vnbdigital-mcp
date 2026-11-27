@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-      "config:recommended"
+    "config:recommended"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "📦 Dependency Dashboard",
@@ -14,7 +14,19 @@
     }
   ],
   "labels": [
-      "dependencies"
+    "dependencies"
   ],
-  "timezone": "Europe/Berlin"
+  "timezone": "Europe/Berlin",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ]
+  },
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": [
+      "security"
+    ]
+  }
 }
